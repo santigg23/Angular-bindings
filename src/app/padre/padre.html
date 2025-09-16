@@ -1,0 +1,14 @@
+<h2>Componente Padre</h2>
+
+<input type="text" [(ngModel)]="tarea" placeholder="Escribe la tarea">
+
+<p>{{ mensaje || ('Tarea pendiente: ' + tarea) }}</p>
+
+<button (click)="enviarTarea()">Enviar al hijo</button>
+
+<hr>
+
+<app-hijo
+  [tarea]="tarea"
+  (completada)="marcarCompletada()">
+</app-hijo>
